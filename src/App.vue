@@ -23,6 +23,12 @@
         </div>
       </div>
     </nav>
+
+    <div class="auth-wrapper">
+      <div class="auth-inner">
+        Hello!
+      </div>
+    </div>
   </div>
 </template>
 
