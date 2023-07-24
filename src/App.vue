@@ -1,10 +1,14 @@
 <script>
-  import { Nav } from './components/Nav.vue'
+  import { Navbar } from './components/Navbar.vue'
+  import { Home } from './components/Home.vue'
+  import { Login } from './components/Login.vue'
 
   export default {
     name: 'App',
     components: {
-      Nav
+      Navbar,
+      Home,
+      Login
     }
   }
 </script>
@@ -13,11 +17,11 @@
 
 <template>
   <div id="app">
-    <Nav />
+    <Navbar/>
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        Hello!
+        <Login/>
       </div>
     </div>
   </div>
