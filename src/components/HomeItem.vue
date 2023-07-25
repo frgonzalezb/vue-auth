@@ -1,5 +1,8 @@
 <template>
-  <h3>Hello!</h3>
+  <div>
+    <h3 v-if="user">Hi, {{ user.firstName }}</h3>
+    <h3 v-if="!user">You're not logged in!</h3>
+  </div>
 </template>
 
 
@@ -9,16 +12,17 @@
 
   export default {
     name: 'HomeItem',
-    async created() {
-      const headers = {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
+    data() {
+      return {
+        user: null
       }
+    },
+    // async created() {
+    //   const response = await axios.get('user');
 
-      const response = await axios.get('user', headers);
+    //   console.log(response);
 
-      console.log(response);
-    }
+    //   this.user = response.data;
+    // }
   }
 </script>
