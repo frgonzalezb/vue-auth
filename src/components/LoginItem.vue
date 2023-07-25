@@ -1,15 +1,15 @@
 <template>
-  <form action="">
+  <form @submit.prevent="handleSubmit">
     <h3>Login</h3>
 
     <div class="form-group">
       <label for="email-field">Email</label>
-      <input type="email" id="email-field" class="form-control" placeholder="Email"/>
+      <input type="email" id="email-field" v-model="email" class="form-control" placeholder="Email"/>
     </div>
 
     <div class="form-group">
       <label for="password-field">Password</label>
-      <input type="password" id="password-field" class="form-control" placeholder="Password"/>
+      <input type="password" id="password-field" v-model="password" class="form-control" placeholder="Password"/>
     </div>
 
     <button class="btn btn-primary btn-block">
@@ -21,7 +21,31 @@
 
 
 <script>
+  // import axios from 'axios';
+
   export default {
-    name: 'LoginItem'
+    name: 'LoginItem',
+    methods: {
+      async handleSubmit() {
+        const data = {
+          email: this.email,
+          password: this.password
+        }
+
+        // Esto es sólo de prueba, borrar después
+        console.log(data);
+
+        // Esto es para la comunicación con el endpoint en el backend:
+        // const response = await axios.post('login', data);
+        // console.log(response);
+        // localStorage.setItem('token', response.data.token);
+      }
+    },
+    data() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
   }
 </script>
