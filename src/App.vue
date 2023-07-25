@@ -4,26 +4,27 @@
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        <LoginItem/>
+        <router-view/>
       </div>
     </div>
   </div>
 </template>
 
+
+
 <script>
-  import { HomeItem } from './components/HomeItem.vue'
-  import { NavbarItem } from './components/NavbarItem.vue'
-  import { LoginItem } from './components/LoginItem.vue'
+  import NavbarItem from './components/NavbarItem.vue'
+
 
   export default {
     name: 'App',
     components: {
-      HomeItem,
       NavbarItem,
-      LoginItem
     }
   }
 </script>
+
+
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');

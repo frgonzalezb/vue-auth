@@ -3,13 +3,13 @@
     <h3>Login</h3>
 
     <div class="form-group">
-      <label>Email</label>
-      <input type="email" class="form-control" placeholder="Email"/>
+      <label for="email-field">Email</label>
+      <input type="email" id="email-field" class="form-control" placeholder="Email"/>
     </div>
 
-    <div class="form-control">
-      <label>Password</label>
-      <input type="password" class="form-control" placeholder="Password"/>
+    <div class="form-group">
+      <label for="password-field">Password</label>
+      <input type="password" id="password-field" class="form-control" placeholder="Password"/>
     </div>
 
     <button class="btn btn-primary btn-block">
