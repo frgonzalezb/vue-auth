@@ -1,30 +1,30 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <h3>Sign up</h3>
 
     <div class="form-group">
       <label for="fname-field">First name</label>
-      <input type="text" id="fname-field" class="form-control" placeholder="First name"/>
+      <input type="text" id="fname-field" v-model="firstName" class="form-control" placeholder="First name"/>
     </div>
 
     <div class="form-group">
       <label for="lname-field">Last name</label>
-      <input type="text" id="lname-field" class="form-control" placeholder="Last name"/>
+      <input type="text" id="lname-field" v-model="lastName" class="form-control" placeholder="Last name"/>
     </div>
 
     <div class="form-group">
       <label for="email-field">Email</label>
-      <input type="email" id="email-field" class="form-control" placeholder="Email"/>
+      <input type="email" id="email-field" v-model="email" class="form-control" placeholder="Email"/>
     </div>
 
     <div class="form-group">
       <label for="password-field">Password</label>
-      <input type="password" id="password-field" class="form-control" placeholder="Password"/>
+      <input type="password" id="password-field" v-model="password" class="form-control" placeholder="Password"/>
     </div>
 
     <div class="form-group">
       <label for="cpassword-field">Confirm password</label>
-      <input type="password" id="cpassword-field" class="form-control" placeholder="Confirm password"/>
+      <input type="password" id="cpassword-field" v-model="confirmPassword" class="form-control" placeholder="Confirm password"/>
     </div>
 
     <button class="btn btn-primary btn-block">
@@ -37,6 +37,28 @@
 
 <script>
   export default {
-    name: 'RegisterItem'
+    name: 'RegisterItem',
+    methods: {
+      handleSubmit() {
+        const data = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          confirmPassword: this.confirmPassword,
+        }
+
+        console.log(data);
+      }
+    },
+    data() {
+      return {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      }
+    },
   }
 </script>
