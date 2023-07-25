@@ -18,7 +18,7 @@
             <!-- Usa javaScript:void(0) si, al hacer clic en un enlace, 
               no quieres que el navegador abra una nueva página o refresque 
               la página actual (dependiendo de la URL especificada). -->
-            <a href="javascript:void(0)" class="nav-link">Logout</a>
+            <a href="javascript:void(0)" @click="handleClic" class="nav-link">Logout</a>
           </li>
         </ul>
       </div>
@@ -31,6 +31,12 @@
 <script>
   export default {
     name: 'NavbarItem',
-    props: ['user']
+    props: ['user'],
+    methods: {
+      handleClic() {
+        localStorage.removeItem('token');
+        this.$router.push('/');
+      }
+    }
   }
 </script>
