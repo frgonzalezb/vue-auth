@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <NavbarItem/>
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        <Login/>
+        <LoginItem/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { Navbar } from './components/Navbar.vue'
-  import { Home } from './components/Home.vue'
-  import { Login } from './components/Login.vue'
+  import { HomeItem } from './components/HomeItem.vue'
+  import { NavbarItem } from './components/NavbarItem.vue'
+  import { LoginItem } from './components/LoginItem.vue'
 
   export default {
     name: 'App',
     components: {
-      Navbar,
-      Home,
-      Login
+      HomeItem,
+      NavbarItem,
+      LoginItem
     }
   }
 </script>
