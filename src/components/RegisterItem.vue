@@ -56,8 +56,12 @@
         // Esto es para la comunicación con el endpoint en el backend:
         axios.post('http://localhost:8000/register', data)
           .then(
-            res => {
-              console.log(res)
+            response => {
+              console.log(response);
+            }
+          ).catch(
+            error => {
+              console.log(error);
             }
           );
       }
