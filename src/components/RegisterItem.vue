@@ -36,12 +36,12 @@
 
 
 <script>
-  import axios from 'axios';
+  // import axios from 'axios';
 
   export default {
     name: 'RegisterItem',
     methods: {
-      handleSubmit() {
+      async handleSubmit() {
         const data = {
           firstName: this.firstName,
           lastName: this.lastName,
@@ -54,16 +54,9 @@
         console.log(data);
 
         // Esto es para la comunicación con el endpoint en el backend:
-        axios.post('http://localhost:8000/register', data)
-          .then(
-            response => {
-              console.log(response);
-            }
-          ).catch(
-            error => {
-              console.log(error);
-            }
-          );
+        // const response = await axios.post('register', data);
+        // console.log(response);
+        // this.$router.push('/login');
       }
     },
     data() {
