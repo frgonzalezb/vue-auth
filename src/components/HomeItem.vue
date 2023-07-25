@@ -5,7 +5,14 @@
 
 
 <script>
+  // import axios from 'axios';
+
   export default {
-    name: 'HomeItem'
+    name: 'HomeItem',
+    async created() {
+      const response = await axios.get('user');
+
+      console.log(response);
+    }
   }
 </script>
