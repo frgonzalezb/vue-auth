@@ -20,6 +20,7 @@
 
 <script>
   export default {
-    name: 'NavbarItem'
+    name: 'NavbarItem',
+    props: ['user']
   }
 </script>

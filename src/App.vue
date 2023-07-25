@@ -1,10 +1,18 @@
 <template>
   <div id="app">
-    <NavbarItem/>
+    <!-- Esto es para los v-if en NavbarItem.vue -->
+    <!-- Usa "custom directives" (el :user="user") -->
+    <!-- El ":user" es la directiva; el "user" es la data -->
+    <!-- En realidad, la directiva está disponible para todos los componentes -->
+    <NavbarItem :user="user"/>
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        <router-view/>
+        <!-- Esto es para los v-if en Home.vue -->
+        <!-- Usa "custom directives" (el :user="user") -->
+        <!-- El ":user" es la directiva; el "user" es la data -->
+        <!-- En realidad, la directiva está disponible para todos los componentes -->
+        <router-view :user="user"/>
       </div>
     </div>
   </div>
@@ -13,14 +21,26 @@
 
 
 <script>
+  // import axios from 'axios';
   import NavbarItem from './components/NavbarItem.vue'
-
 
   export default {
     name: 'App',
     components: {
       NavbarItem,
-    }
+    },
+    data() {
+      return {
+        user: null
+      }
+    },
+    // async created() {
+    //   const response = await axios.get('user');
+
+    //   console.log(response);
+
+    //   this.user = response.data;
+    // }
   }
 </script>
 

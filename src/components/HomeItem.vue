@@ -8,21 +8,9 @@
 
 
 <script>
-  // import axios from 'axios';
-
+  // props (properties) se usa aquí para los "custom directives" de App.vue
   export default {
     name: 'HomeItem',
-    data() {
-      return {
-        user: null
-      }
-    },
-    // async created() {
-    //   const response = await axios.get('user');
-
-    //   console.log(response);
-
-    //   this.user = response.data;
-    // }
+    props: ['user']
   }
 </script>
