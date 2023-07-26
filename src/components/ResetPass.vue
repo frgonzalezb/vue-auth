@@ -21,5 +21,7 @@
 
 
 <script>
-
+  export default {
+    name: 'ResetPass'
+  }
 </script>
