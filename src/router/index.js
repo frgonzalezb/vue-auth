@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeItem from '../components/HomeItem.vue'
 import LoginItem from '../components/LoginItem.vue'
 import RegisterItem from '../components/RegisterItem.vue'
+import ForgotPass from '../components/ForgotPass.vue'
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: "/register",
     name: "Register",
     component: RegisterItem,
+  },
+  {
+    path: "/forgot",
+    name: "ForgotPass",
+    component: ForgotPass,
   },
 ];
 
