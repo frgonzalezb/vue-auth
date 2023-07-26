@@ -3,7 +3,7 @@
     <h3>Forgot password?</h3>
 
     <div class="form-group">
-      <label for="recovery-email"></label>
+      <label for="recovery-email">Email</label>
       <input type="email" class="form-control" v-model="email" name="email-field" id="recovery-email" placeholder="Email">
     </div>
 
