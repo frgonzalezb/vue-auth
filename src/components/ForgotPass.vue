@@ -30,10 +30,10 @@
           email: this.email
         }
 
+        console.log(data);
+
         // const response = await axios.post('forgot', data);
         // console.log(response);
-
-        console.log(data);
       }
     },
     data() {
