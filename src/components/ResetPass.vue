@@ -29,13 +29,15 @@
       async handleSubmit() {
         const data = {
           newPass: this.newPass,
-          confirmNewPass: this.confirmNewPass
+          confirmNewPass: this.confirmNewPass,
+          token: this.$route.params
         }
 
         console.log(data);
 
-        // const response = await axios.post('forgot', data);
+        // const response = await axios.post('reset', data);
         // console.log(response);
+        // this.$router.push('/login');
       }
     },
     data() {
