@@ -24,13 +24,18 @@
 
   export default {
     name: 'ForgotPass',
-    // methods: {
-    //   async handleSubmit() {
-    //     const response = await axios.post('forgot', data);
+    methods: {
+      async handleSubmit() {
+        const data = {
+          email: this.email
+        }
 
-    //     console.log(response);
-    //   }
-    // },
+        // const response = await axios.post('forgot', data);
+        // console.log(response);
+
+        console.log(data);
+      }
+    },
     data() {
       return {
         email: ''
