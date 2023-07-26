@@ -21,7 +21,22 @@
 
 
 <script>
+  // import axios from 'axios';
+
   export default {
-    name: 'ResetPass'
+    name: 'ResetPass',
+    methods: {
+      async handleSubmit() {
+        const response = await axios.post('forgot', data);
+
+        console.log(response);
+      }
+    },
+    data() {
+      return {
+        newPass: '',
+        confirmNewPass: ''
+      }
+    },
   }
 </script>
