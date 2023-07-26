@@ -27,9 +27,15 @@
     name: 'ResetPass',
     methods: {
       async handleSubmit() {
-        const response = await axios.post('forgot', data);
+        const data = {
+          newPass: this.newPass,
+          confirmNewPass: this.confirmNewPass
+        }
 
-        console.log(response);
+        console.log(data);
+
+        // const response = await axios.post('forgot', data);
+        // console.log(response);
       }
     },
     data() {
