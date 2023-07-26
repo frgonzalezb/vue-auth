@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <!-- Esto es para los v-if en NavbarItem.vue -->
-    <!-- Usa "custom directives" (el :user="user") -->
-    <!-- El ":user" es la directiva; el "user" es la data -->
-    <!-- En realidad, la directiva está disponible para todos los componentes -->
-    <NavbarItem :user="user"/>
+    <!-- Se borran los custom directives para obtener el usuario desde el estado
+    y no desde las directivas o propiedades -->
+    <NavbarItem/>
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        <!-- Esto es para los v-if en Home.vue -->
-        <!-- Usa "custom directives" (el :user="user") -->
-        <!-- El ":user" es la directiva; el "user" es la data -->
-        <!-- En realidad, la directiva está disponible para todos los componentes -->
-        <router-view :user="user"/>
+        <!-- Se borran los custom directives para obtener el usuario desde el estado
+        y no desde las directivas o propiedades -->
+        <router-view/>
       </div>
     </div>
   </div>
@@ -29,17 +25,12 @@
     components: {
       NavbarItem,
     },
-    data() {
-      return {
-        user: null
-      }
-    },
     // async created() {
     //   const response = await axios.get('user');
 
     //   console.log(response);
 
-    //   this.user = response.data;
+    //   this.$store.dispatch('user', response.data);
     // }
   }
 </script>

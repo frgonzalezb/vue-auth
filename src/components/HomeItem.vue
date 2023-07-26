@@ -8,9 +8,13 @@
 
 
 <script>
-  // props (properties) se usa aquí para los "custom directives" de App.vue
+  import { mapGetters } from 'vuex';
+
   export default {
     name: 'HomeItem',
-    props: ['user']
+    computed: {
+      // Obtener el getter del usuario
+      ...mapGetters(['user'])
+    }
   }
 </script>

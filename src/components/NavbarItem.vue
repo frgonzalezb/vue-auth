@@ -29,14 +29,21 @@
 
 
 <script>
+  import { mapGetters } from 'vuex';
+
   export default {
     name: 'NavbarItem',
-    props: ['user'],
     methods: {
       handleClic() {
+        // Logout
         localStorage.removeItem('token');
+        this.$store.dispatch('user', null);
         this.$router.push('/');
       }
+    },
+    computed: {
+      // Obtener el getter del usuario
+      ...mapGetters(['user'])
     }
   }
 </script>
