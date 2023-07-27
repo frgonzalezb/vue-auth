@@ -65,7 +65,7 @@
           // console.log(response);
           // this.$router.push('/login');
         } catch(error) {
-          this.error = "Something's wrong!"
+          this.error = "Something's wrong!";
         }
       }
     },
