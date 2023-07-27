@@ -7,4 +7,7 @@
 
 
 <script>
+  export default {
+    name: ErrorAlert
+  }
 </script>
