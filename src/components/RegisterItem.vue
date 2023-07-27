@@ -1,5 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
+    <error-alert v-if="error" :error="error"/>
+
     <h3>Sign up</h3>
 
     <div class="form-group">
@@ -37,26 +39,31 @@
 
 <script>
   // import axios from 'axios';
+  import ErrorAlert from './ErrorAlert.vue';
 
   export default {
     name: 'RegisterItem',
     methods: {
       async handleSubmit() {
-        const data = {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          email: this.email,
-          password: this.password,
-          confirmPassword: this.confirmPassword
+        try {
+          const data = {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            password: this.password,
+            confirmPassword: this.confirmPassword
+          }
+
+          // Esto es sólo de prueba, borrar después
+          console.log(data);
+
+          // Esto es para la comunicación con el endpoint en el backend:
+          // const response = await axios.post('register', data);
+          // console.log(response);
+          // this.$router.push('/login');
+        } catch(error) {
+          this.error = "Something's wrong!"
         }
-
-        // Esto es sólo de prueba, borrar después
-        console.log(data);
-
-        // Esto es para la comunicación con el endpoint en el backend:
-        // const response = await axios.post('register', data);
-        // console.log(response);
-        // this.$router.push('/login');
       }
     },
     data() {
@@ -65,7 +72,8 @@
         lastName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        error: ''
       }
     },
   }

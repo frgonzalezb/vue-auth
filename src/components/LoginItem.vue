@@ -1,8 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <div v-if="error" class="alert alert-danger" role="alert">
-      {{ error }}
-    </div>
+    <error-alert v-if="error" :error="error"/>
     
     <h3>Login</h3>
 
@@ -30,9 +28,13 @@
 
 <script>
   // import axios from 'axios';
+  import ErrorAlert from './ErrorAlert.vue';
 
   export default {
     name: 'LoginItem',
+    components: {
+      ErrorAlert
+    },
     methods: {
       async handleSubmit() {
         try {
