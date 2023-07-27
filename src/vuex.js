@@ -1,15 +1,11 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-
-
-Vue.use(Vuex);
+import {createStore} from 'vuex';
 
 
 const state = {
   user: null
 };
 
-const store = new Vuex.Store({
+export default createStore({
   // Sobre getters, actions y mutations, leer esto:
   // https://medium.com/@abuoop123/why-getters-mutations-actions-in-vuex-store-77069710d2d5
 
@@ -33,7 +29,8 @@ const store = new Vuex.Store({
     user(state, user) {
       state.user = user;
     }
-  }
+  },
+  modules: {
+    
+  },
 });
-
-export default store;
