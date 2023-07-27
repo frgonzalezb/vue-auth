@@ -17,7 +17,7 @@
 
 
 <script>
-  // import axios from 'axios';
+  import axios from 'axios';
   import NavbarItem from './components/NavbarItem.vue'
 
   export default {
@@ -25,13 +25,13 @@
     components: {
       NavbarItem,
     },
-    // async created() {
-    //   const response = await axios.get('user');
+    async created() {
+      const response = await axios.get('user');
 
-    //   console.log(response);
+      console.log(response);
 
-    //   this.$store.dispatch('user', response.data);
-    // }
+      this.$store.dispatch('user', response.data);
+    }
   }
 </script>
 
