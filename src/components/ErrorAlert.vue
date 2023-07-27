@@ -8,6 +8,7 @@
 
 <script>
   export default {
-    name: ErrorAlert
+    name: 'ErrorAlert',
+    props: ['error']
   }
 </script>
