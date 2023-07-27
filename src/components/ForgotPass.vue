@@ -1,5 +1,9 @@
 <template>
   <form @submit.prevent="handleSubmit">
+    <div v-if="message" class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
+    
     <h3>Forgot password?</h3>
 
     <div class="form-group">
@@ -34,6 +38,8 @@
 
         // const response = await axios.post('forgot', data);
         // console.log(response);
+        
+        this.message = 'The email was sent!';
       }
     },
     data() {
