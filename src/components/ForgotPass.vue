@@ -38,7 +38,8 @@
     },
     data() {
       return {
-        email: ''
+        email: '',
+        message: ''
       }
     },
   }
