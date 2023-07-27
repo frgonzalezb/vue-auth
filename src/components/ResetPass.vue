@@ -21,7 +21,7 @@
 
 
 <script>
-  // import axios from 'axios';
+  import axios from 'axios';
 
   export default {
     name: 'ResetPass',
@@ -35,9 +35,9 @@
 
         console.log(data);
 
-        // const response = await axios.post('reset', data);
-        // console.log(response);
-        // this.$router.push('/login');
+        const response = await axios.post('reset', data);
+        console.log(response);
+        this.$router.push('/login');
       }
     },
     data() {

@@ -25,7 +25,7 @@
   // al momento de hacer la petición desde el formulario, cuando se tenga
   // lista la funcionalidad desde el backend.
 
-  // import axios from 'axios';
+  import axios from 'axios';
   import ErrorAlert from './ErrorAlert.vue';
 
   export default {
@@ -42,8 +42,8 @@
 
           console.log(data);
 
-          // const response = await axios.post('forgot', data);
-          // console.log(response);
+          const response = await axios.post('forgot', data);
+          console.log(response);
           
           this.message = 'The email was sent!';
           this.error = '';
