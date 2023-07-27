@@ -46,7 +46,9 @@
           // console.log(response);
           
           this.message = 'The email was sent!';
+          this.error = '';
         } catch(error) {
+          this.message = '';
           this.error = "Something's wrong!";
         }
       }
