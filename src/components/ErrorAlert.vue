@@ -1,7 +1,7 @@
 <template>
   <div v-if="error" class="alert alert-danger" role="alert">
-      {{ error }}
-    </div>
+    {{ error }}
+  </div>
 </template>
 
 
