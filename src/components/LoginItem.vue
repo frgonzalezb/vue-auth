@@ -54,7 +54,7 @@
           // this.$store.dispatch('user', response.data.user);
           // this.$router.push('/login');
         } catch(error) {
-          this.error = 'Invalid email/password.'
+          this.error = 'Invalid email/password!';
         }
       }
     },
