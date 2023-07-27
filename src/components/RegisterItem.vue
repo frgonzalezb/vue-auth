@@ -43,6 +43,9 @@
 
   export default {
     name: 'RegisterItem',
+    components: {
+      ErrorAlert
+    },
     methods: {
       async handleSubmit() {
         try {
