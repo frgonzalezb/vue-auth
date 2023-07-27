@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
+    <error-alert v-if="error" :error="error"/>
     <div v-if="message" class="alert alert-success" role="alert">
       {{ message }}
     </div>
@@ -25,27 +26,36 @@
   // lista la funcionalidad desde el backend.
 
   // import axios from 'axios';
+  import ErrorAlert from './ErrorAlert.vue';
 
   export default {
     name: 'ForgotPass',
+    components: {
+      ErrorAlert
+    },
     methods: {
       async handleSubmit() {
-        const data = {
+        try {
+          const data = {
           email: this.email
+          }
+
+          console.log(data);
+
+          // const response = await axios.post('forgot', data);
+          // console.log(response);
+          
+          this.message = 'The email was sent!';
+        } catch(error) {
+          this.error = "Something's wrong!";
         }
-
-        console.log(data);
-
-        // const response = await axios.post('forgot', data);
-        // console.log(response);
-        
-        this.message = 'The email was sent!';
       }
     },
     data() {
       return {
         email: '',
-        message: ''
+        message: '',
+        error: ''
       }
     },
   }
