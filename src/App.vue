@@ -26,7 +26,7 @@
       NavbarItem,
     },
     async created() {
-      const response = await axios.get('user');
+      const response = await axios.get('http://localhost:8000/user/');
 
       console.log(response);
 

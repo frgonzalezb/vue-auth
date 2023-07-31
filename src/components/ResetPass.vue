@@ -35,7 +35,7 @@
 
         // console.log(data);
 
-        const response = await axios.post('reset', data);
+        const response = await axios.post('http://localhost:8000/reset/', data);
         console.log(response);
         this.$router.push('http://localhost:8000/login/');
       }

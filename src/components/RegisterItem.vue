@@ -63,7 +63,7 @@
           // Esto es para la comunicación con el endpoint en el backend:
           const response = await axios.post('http://localhost:8000/register/', data);
           console.log(response);
-          this.$router.push('/login');
+          this.$router.push('http://localhost:8000/login/');
         
         } catch(error) {
           this.error = "Something's wrong!";

@@ -42,7 +42,7 @@
 
           console.log(data);
 
-          const response = await axios.post('forgot', data);
+          const response = await axios.post('http://localhost:8000/forgot/', data);
           console.log(response);
           
           this.message = 'The email was sent!';
