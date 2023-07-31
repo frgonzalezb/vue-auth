@@ -38,7 +38,7 @@
 
 
 <script>
-  // import axios from 'axios';
+  import axios from 'axios';
   import ErrorAlert from './ErrorAlert.vue';
 
   export default {
@@ -58,12 +58,13 @@
           }
 
           // Esto es sólo de prueba, borrar después
-          console.log(data);
+          // console.log(data);
 
           // Esto es para la comunicación con el endpoint en el backend:
-          // const response = await axios.post('register', data);
-          // console.log(response);
-          // this.$router.push('/login');
+          const response = await axios.post('http://localhost:8000/register/', data);
+          console.log(response);
+          this.$router.push('/login');
+        
         } catch(error) {
           this.error = "Something's wrong!";
         }

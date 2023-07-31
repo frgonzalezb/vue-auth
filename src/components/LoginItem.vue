@@ -44,15 +44,17 @@
           }
 
           // Esto es sólo de prueba, borrar después
-          console.log(data);
+          // console.log(data);
 
           // Esto es para la comunicación con el endpoint en el backend:
-          const response = await axios.post('login', data);
+          const response = await axios.post('login/', data);
           console.log(response);
           localStorage.setItem('token', response.data.token);
+
           // Esto es para despachar el evento que el usuario se ha logueado (al actions del store)
           this.$store.dispatch('user', response.data.user);
           this.$router.push('/login');
+
         } catch(error) {
           this.error = 'Invalid email/password!';
         }

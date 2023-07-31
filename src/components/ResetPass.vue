@@ -33,11 +33,11 @@
           token: this.$route.params
         }
 
-        console.log(data);
+        // console.log(data);
 
         const response = await axios.post('reset', data);
         console.log(response);
-        this.$router.push('/login');
+        this.$router.push('http://localhost:8000/login/');
       }
     },
     data() {
